@@ -1,19 +1,18 @@
 <!DOCTYPE html><html lang="pt-BR">
   <head>
-  <meta charset="UTF-8">
-  <title>Redirecionando...</title>
+  
+<script>
+(function () {
+  const ehCelular = /Android|iPhone|iPod|Mobile|Windows Phone/i.test(
+    navigator.userAgent
+  );
 
-  <!-- Redirecionamento automático -->
-  <meta http-equiv="refresh" content="0; url=https://www.google.com/">
+  if (!ehCelular) {
+    window.location.replace("https://www.google.com/");
+  }
+})();
+</script>
 
-  <script>
-    // Redirecionamento via JavaScript (backup)
-    window.location.href = "https://www.google.com/";
-  </script>
-</head>
-<body>
-  <p>Redirecionando... Caso não funcione, <a href="https://www.google.com/">clique aqui</a>.</p>
-</body>
 
 
   
